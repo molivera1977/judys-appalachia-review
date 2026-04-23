@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>"Judy's Appalachia" Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section id="coverSection" class="view visible">
+    <h1 class="center">"Judy's Appalachia" Review</h1>
+    <div class="cover-flex">
+      <div class="cover-image">
+        <img src="assets/cover.png" alt="Judy's Appalachia Cover" />
+      </div>
+      <div class="cover-text-card card">
+        <p>Welcome! Use this site to study the vocabulary, comprehension, and cloze sentences for <em>"Judy's Appalachia"</em>.</p>
+        <div class="tabs">
+          <button class="tab active" data-section="vocab">Vocabulary</button>
+          <button class="tab" data-section="comp">Comprehension</button>
+          <button class="tab" data-section="cloze">Cloze (Fill-in)</button>
+        </div>
+        <div class="center action-group">
+          <button id="resumeBtn" class="primary resume-style" style="display:none;">Resume Session</button>
+          <button id="startBtn" class="primary">Start Review</button>
+          <button id="statsBtn" class="secondary">🏆 View Progress Report</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-stats" class="view">
+    <div class="card center">
+      <h2>🏆 Today's Progress Report</h2>
+      <div class="stats-grid">
+        <div class="stat-column">
+          <h3>Vocabulary</h3>
+          <div class="mini-table-wrapper"><table class="history-table"><thead><tr><th>Time</th><th>Score</th><th>%</th></tr></thead><tbody id="vocabHistory"></tbody></table></div>
+        </div>
+        <div class="stat-column">
+          <h3>Comprehension</h3>
+          <div class="mini-table-wrapper"><table class="history-table"><thead><tr><th>Time</th><th>Score</th><th>%</th></tr></thead><tbody id="compHistory"></tbody></table></div>
+        </div>
+        <div class="stat-column">
+          <h3>Cloze</h3>
+          <div class="mini-table-wrapper"><table class="history-table"><thead><tr><th>Time</th><th>Score</th><th>%</th></tr></thead><tbody id="clozeHistory"></tbody></table></div>
+        </div>
+      </div>
+      <button id="clearStatsBtn" class="small-link">Clear History (Teacher Only)</button>
+      <br><br>
+      <button id="backFromStats" class="secondary">Back to Home</button>
+    </div>
+  </section>
+
+  <section id="view-quiz" class="view">
+    <div class="card">
+      <div class="quiz-header">
+        <div class="quiz-title"><h2 id="quizTitle">Vocabulary</h2><div id="questionCounter">Question 1 of 10</div></div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div class="prompt-area">
+        <div id="prompt" class="prompt"></div>
+        <button id="readAloudBtn" class="audio-btn">🔊 Read Aloud</button>
+      </div>
+      <div id="choicesWrap" class="choices"></div>
+      <div id="feedback" class="feedback"></div>
+      <div class="quiz-actions">
+        <button id="checkBtn" class="primary">Check Answer</button>
+        <button id="nextBtn" class="secondary" disabled>Next Question</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-result" class="view">
+    <div class="card center">
+      <h2 id="resultTitle">Nice work!</h2>
+      <p id="resultStats"></p>
+      <div class="center action-group">
+        <button id="retryBtn" class="primary">Study This Again</button>
+        <button id="toTop" class="secondary">Return to Home</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="data/vocab_bank.js"></script>
+  <script src="data/comp.js"></script>
+  <script src="data/cloze.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
